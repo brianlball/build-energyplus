@@ -24,6 +24,8 @@ RUN cd /usr/local/src && \
 	cd energyplus && \
     git clone https://github.com/NREL/EnergyPlus.git .
 
+ADD https://api.github.com/repos/NREL/EnergyPlus/git/refs/heads/$BRANCH version.json
+
 RUN cd /usr/local/src/energyplus && \
     git checkout $BRANCH && \
     rm -rf build && \
