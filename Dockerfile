@@ -17,7 +17,13 @@ RUN apt-get update && apt-get install -y \
   sudo \
   wget \
   bsdtar \
-  software-properties-common
+  software-properties-common \
+  locales \
+  locales-all
+
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
 
 RUN cd /usr/local/src && \
     mkdir energyplus && \
